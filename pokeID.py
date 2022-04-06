@@ -30,7 +30,7 @@ async def wild(ctx):
     curr_png = poke_list.index(curr_pokemon) + 1
     curr_png = str(curr_png) + ".png"
     embed = discord.Embed()
-    file = discord.File("./Poke_PNG/" + curr_png, filename = curr_png)
+    file = discord.File("./Poke_PNGs/" + curr_png, filename = curr_png)
     embed.set_image(url="attachment://" + curr_png)
 
     await ctx.send(file=file, embed=embed)
