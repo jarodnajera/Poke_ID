@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 from pokeList import poke_list
 
 load_dotenv()
-TOKEN = 'DISCORD_TOKEN'
+TOKEN = os.getenv('DISCORD_TOKEN')
 
 with open("trainer_list.json", 'rb') as file:
     if file.read(2) != '{}':
@@ -42,6 +42,7 @@ async def wild(ctx):
     msg_author = msg.author
     msg_author_str = str(msg_author)
     msg = msg.content.lower()
+    msg = msg.strip()
     msg = msg.capitalize()
     if msg == curr_pokemon:
         if msg_author_str in trainer_dict:
